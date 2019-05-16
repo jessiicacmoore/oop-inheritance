@@ -1,7 +1,11 @@
+class Person:
+    """A class that represents a person"""
+
 class Student:
     """A class that represents a student"""
     def learn(self):
         return "I get it!"
+
 
 class Instructor:
     """A class that represents an instructor"""
