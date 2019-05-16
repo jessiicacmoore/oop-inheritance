@@ -30,6 +30,14 @@ class Body:
     def __repr__(self):
         return f"{self.name}-{self.mass:.1f}"
 
+    @classmethod
+    def all(cls, system):
+        all_list = []
+        for body in system.bodies:
+            if isinstance(body, cls):
+                all_list.append(body)
+        return all_list
+
 
 class Planet(Body):
     def __init__(self, name, mass, day, year):
@@ -70,3 +78,8 @@ solar.add_multiple(venus, earth, mars, sun, sirius, moon, phobos, deimos)
 
 print(solar.bodies)  # [Mercury-3.3, Venus-3.5, Earth-10.0, Mars-6.0, Sun-12.0, Sirius-8.2, Moon-5.0, Phobos-5.0, Deimos-4.2]
 print(solar.total_mass())  # 57.2
+
+# return all the planets, stars, and moons in the system, respectively
+print(Planet.all(solar))
+print(Star.all(solar))
+print(Moon.all(solar))
