@@ -7,7 +7,8 @@ class System:
         return f"{self.name} System: {self.bodies}"
 
     def add(self, celestial_body):
-        self.bodies.append(celestial_body)
+        if celestial_body not in self.bodies:
+            self.bodies.append(celestial_body)
 
     def add_multiple(self, *bodies):
         for body in bodies:
@@ -74,6 +75,7 @@ phobos = Moon("Phobos", 5, 3, mars)
 deimos = Moon("Deimos", 4.2, 4, mars)
 
 solar.add(mercury)
+solar.add(mercury)  # duplicate will not be added because of if statement in system add instance method
 solar.add_multiple(venus, earth, mars, sun, sirius, moon, phobos, deimos)
 
 print(solar.bodies)  # [Mercury-3.3, Venus-3.5, Earth-10.0, Mars-6.0, Sun-12.0, Sirius-8.2, Moon-5.0, Phobos-5.0, Deimos-4.2]
