@@ -68,5 +68,5 @@ deimos = Moon("Deimos", 4.2, 4, mars)
 solar.add(mercury)
 solar.add_multiple(venus, earth, mars, sun, sirius, moon, phobos, deimos)
 
-print(solar.bodies)
-print(solar.total_mass())
+print(solar.bodies)  # [Mercury-3.3, Venus-3.5, Earth-10.0, Mars-6.0, Sun-12.0, Sirius-8.2, Moon-5.0, Phobos-5.0, Deimos-4.2]
+print(solar.total_mass())  # 57.2
