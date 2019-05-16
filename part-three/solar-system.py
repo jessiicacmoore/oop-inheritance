@@ -58,7 +58,7 @@ class Moon(Body):
         self.month = month
         self.planet = planet
 
-
+print("----Solar System---")
 solar = System("Solar")
 
 mercury = Planet("Mercury", 3.3, 15, 88)
@@ -83,3 +83,25 @@ print(solar.total_mass())  # 57.2
 print(Planet.all(solar))
 print(Star.all(solar))
 print(Moon.all(solar))
+
+print("----Alpha Centauri System---")
+
+alpha = System("Alpha Centauri")
+
+proxima = Planet("Proxima Centauri", 14.3, 15, 76)
+narnia = Planet("Narnia", 12.1, 9, 63)
+
+vega = Star("Vega", 12, "G2V")
+rigel = Star("Rigel", 8.2, "a1v")
+
+europa = Moon("Europa", 5, 12, proxima)
+titan = Moon("Titan", 5, 3, narnia)
+
+alpha.add_multiple(proxima, narnia, vega, rigel, europa, titan)
+print(alpha.bodies)
+print(solar.total_mass())
+
+print(Planet.all(alpha))
+print(Star.all(alpha))
+print(Moon.all(alpha))
+
